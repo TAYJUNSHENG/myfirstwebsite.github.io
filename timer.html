@@ -1,0 +1,46 @@
+<html>
+<body>
+
+<div>
+
+<h1 id= 'show'>timer</h1>
+<button onclick= 'uu()'> try</button>
+<h2 id='t'>x value</h2>
+<button onclick='p()'>test</button>
+<button onclick='c()'>con</button>
+ <div><canvas id="myCanvas" width="200" height="100"></canvas></div>
+<script>
+var x = 0 ;
+var w = 1 ;
+
+var hold= 0;
+
+function uu(){
+var u = setInterval(test,1000);
+}
+function test(){
+
+
+x=x+w;
+document.getElementById("show").innerHTML = x;
+
+
+}
+
+
+function p (){
+
+w=0;
+
+document.getElementById("t").innerHTML = x;
+}
+function c(){
+
+w = 1;
+}
+</script>
+
+
+ 
+</body>
+</html>

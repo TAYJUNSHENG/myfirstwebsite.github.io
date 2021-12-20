@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Finiancial ratio support app</title>
+    <style>
+        body {background-color:#f2f2f2;}
+        table, th, td {
+          border: 1px solid black;
+          
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .result{
+            float: right;
+            background-color: #f2f2f2;
+        }
+        .left{
+            float: left;
+            background-color: #f2f2f2;
+        }
+
+.showbutton {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.showbutton:hover {
+  background-color: #45a049;
+}
+#app{
+    background-color: #f2f2f2;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+        </style>
+</head>
+
+<body>
+  <audio id="zawarudo">
+  
+    <source src="zawarudo.mp3" type="audio/mpeg">
+    
+  </audio>
+    
+<div id="app">
+    <h3 id ="topic">Please input the value<br></h3> 
+    
+    <table class="left" id="input">
+        <tr>
+            <td> <label for="current assets">current assets:</label></td>
+            <td><input type="text" id="current assets" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="current liabilities">current liabilities:</label></td>
+            <td><input type="text" id="current liabilities" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="prepayments">prepayments:</label></td>
+            <td><input type="text" id="prepayments" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="inventory">inventory:</label></td>
+            <td><input type="text" id="inventory" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="cash and bank balance">cash and bank balance:</label></td>
+            <td><input type="text" id="CBbalance" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="total debts" >total debts:</label></td>
+            <td><input type="text" id="total debts" ><br><br></td>
+
+          </tr>
+          <tr>
+            <td> <label for="total assets" >total assets:</label></td>
+            <td><input type="text" id="total assets" ><br><br></td>
+
+          </tr>
+          <tr>
+            <td> <label for="total equities">total equities:</label></td>
+            <td><input type="text" id="total equities" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="non-current liabilities">non-current liabilities:</label></td>
+            <td><input type="text" id="non-current liabilities" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="operating profit or EBIT">operating profit or EBIT:</label></td>
+            <td><input type="text" id="EBIT" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="finance costs or interests">finance costs or interests:</label></td>
+            <td><input type="text" id="finance costs or interests" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="revenue">revenue:</label></td>
+            <td><input type="text" id="revenue" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="cost of goods sold">cost of goods sold:</label></td>
+            <td><input type="text" id="cost of goods sold" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="opening inventory">opening inventory:</label></td>
+            <td><input type="text" id="opening inventory" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="closing inventory">closing inventory:</label></td>
+            <td><input type="text" id="closing inventory" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="opening trade receivables">opening trade receivables:</label></td>
+            <td><input type="text" id="opening trade receivables" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="closing trade receivables">closing trade receivables:</label></td>
+            <td><input type="text" id="closing trade receivables" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="gross profit">gross profit:</label></td>
+            <td><input type="text" id="gross profit" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="net profit">net profit:</label></td>
+            <td><input type="text" id="net profit" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="share price">share price:</label></td>
+            <td><input type="text" id="share price" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="earnings per share">earnings per share:</label></td>
+            <td><input type="text" id="earnings per share" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="net assets per share">net assets per share:</label></td>
+            <td><input type="text" id="net assets per share" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="EPS growth">EPS growth:</label></td>
+            <td><input type="text" id="EPS growth" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="sales per share">sales per share:</label></td>
+            <td><input type="text" id="sales per share" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="cash flow per share">cash flow per share:</label></td>
+            <td><input type="text" id="cash flow per share" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="dividend per share">dividend per share:</label></td>
+            <td><input type="text" id="dividend per share" ><br><br></td>
+          </tr>
+          <tr>
+            <td> <label for="opening share price">opening share price:</label></td>
+            <td><input type="text" id="opening share price" ><br><br></td>
+          </tr>
+          <tr>
+            <td style="border: 0px;">
+          <button onclick="show()" class="showbutton">click here to show result</button>
+            </td>
+          
+          </tr>
+        </table>
+        
+        <h3 style="text-align:right;">Result</h3>
+          <div>
+            <table class="result" id="result"> 
+              
+              <tr>
+                <th>Liquidity</th>
+                </tr>
+                <tr>
+                  <td>
+                  Current ratio:
+                </td>
+                <td id='Current ratio'>
+
+                </td>
+              </tr>
+              <tr>
+                <td>Quick ratio:</td>
+                <td id='Quick ratio'></td>
+              </tr>
+
+                <tr><td >
+                  Cash ratio:
+                </td>
+              <td id="Cash ratio"></td></tr>
+           
+              <tr>
+                <th>Leveraging</th>
+                </tr>
+                <tr>
+                  <td>
+                  Debt ratio:
+                </td>
+                <td id="Debt ratio">
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Debt to equity ratio:
+              </td>
+              <td id="Debt to equity ratio">
+                
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Long-term debt-equity:
+            </td>
+            <td id="Long-term debt-equity">
+              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Interest coverage ratio:
+          </td>
+          <td id="Interest coverage ratio">
+            
+          </td>
+        </tr>
+
+              <tr>
+                <th>Efficiency</th>
+                </tr>
+                <tr><td>
+                  Asset turnover:
+                </td>
+                <td id="Asset turnover">
+
+                </td>
+              </tr>
+              <tr><td>
+                Inventory turnover:
+              </td>
+              <td id="Inventory turnover">
+                
+              </td>
+            </tr>
+            <tr><td>
+              Days sales in inventory:  
+            </td>
+            <td id="Days sales in inventory">
+              
+            </td>
+          </tr>
+          <tr><td>
+            Receivables turnover:  
+          </td>
+          <td id="Receivables turnover">
+            
+          </td>
+        </tr>
+        <tr><td>
+          Days receivables outstanding:    
+        </td>
+        <td id="Days receivables outstanding">
+          
+        </td>
+      </tr>
+
+              <tr>
+                <th>Profitability</th>
+                </tr>
+                <tr><td>
+                  Gross margin:
+                </td>
+                <td id="Gross margin"></td>
+              </tr>
+              <tr><td>
+                Operating margin:
+              </td>
+              <td id="Operating margin"></td>
+            </tr>
+            <tr><td>
+              Profit margin:   
+            </td>
+            <td id="Profit margin">
+                  
+            </td>
+          </tr>
+          <tr><td>
+            Return on assets:   
+          </td>
+          <td id="Return on assets"></td>
+        </tr>
+        <tr><td>
+          Return on equity:     
+        </td>
+        <td id="Return on equity"></td>
+      </tr>
+                
+            
+              <tr>
+                <th>Market</th>
+                </tr>
+                <tr><td>
+                  Price-to-earnings ratio:
+                </td>
+              <td id="Price-to-earnings ratio"></td>
+              </tr>
+              <tr><td>
+                Price-to-book ratio:
+              </td>
+            <td id="Price-to-book ratio"></td>
+            </tr>
+            <tr><td>
+              Price earnings growth:  
+            </td>
+          <td id="Price earnings growth"></td>
+          </tr>
+          <tr><td>
+            Price-to-sales ratio:    
+          </td>
+        <td id="Price-to-sales ratio"></td>
+        </tr>
+        <tr><td>
+          Price-to-cash flow ratio:     
+        </td>
+      <td id="Price-to-cash flow ratio"></td>
+      </tr>
+      <tr><td>
+        Dividend yield:        
+      </td>
+    <td id="Dividend yield"></td>
+    </tr>
+    <tr><td><button onclick="window.print()" class="showbutton">print pdf</button></td>
+      <td><button onclick="out()" class="showbutton">download in word </button>
+        <button onclick="tableToExcel('myTable', 'name', 'myfile.xls');" class="showbutton">download in  excel</button></td>
+    </tr>
+               
+            </table>
+            
+          </div>
+        
+</div>
+
+
+</body>
+
+
+
+<script src="part.js"></script>
+<script src="main.js"></script>
+</html>
